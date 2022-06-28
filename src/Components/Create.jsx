@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import list from "./Array";
@@ -8,6 +8,10 @@ const Create = () => {
   //Making usestate for setting and fetching a value in jsx
   const [task, setTask] = useState([]);
 
+  useEffect(() => {
+    let localList = localStorage.getItem("todoList");
+    list = JSON.parse(localList);
+  }, []);
   //Using useNavigation for redirecting to pages
   let navigate = useNavigate();
 

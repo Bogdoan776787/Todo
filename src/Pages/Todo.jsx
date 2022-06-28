@@ -7,8 +7,12 @@ import deleteButton from "../assets/delete.svg";
 const Todo = () => {
   let navigate = useNavigate();
   function setID(id, Task) {
-    localStorage.setItem("id", id);
-    localStorage.setItem("Task", Task);
+    // let localEdit = list.find(x => x.id === id)
+    //  aici trebuie sa editezi obiectul din lista
+    // dupa trebuie sa il faci in stringify
+    // trebuie sa stergi lista curenta din localstorage
+    // si la urma ii faci iar setItem cu lista stringu
+    localStorage.setItem(Task, id);
   }
 
   //Delete function-for deleting the entry
